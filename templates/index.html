@@ -47,6 +47,11 @@
                         <h1>{{ config.extra.after_dark_title }}</h1>
                     </header>
                 {% endif %}
+                {% if section.content %}
+                <div>
+                    {{ section.content | safe }}
+                </div>
+                {% endif %}
                 {% for page in paginator.pages %}
                     {{ post_macros::page_in_list(page=page) }}
                 {% endfor %}
