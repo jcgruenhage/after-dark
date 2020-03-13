@@ -28,6 +28,12 @@
                 {{ page.summary | safe }}
                 <nav class="readmore"><a itemprop="url" href="{{ page.permalink | safe }}">Read More&nbsp;&raquo;</a></nav>
             </div>
+	{% else %}
+            <div itemprop="summary">
+                {{ page.content | striptags | truncate | safe }}
+                <nav class="readmore"><a itemprop="url" href="{{ page.permalink | safe }}">Read More&nbsp;&raquo;</a></nav>
+            </div>
         {% endif %}
+
     </article>
 {% endmacro page_in_list %}
